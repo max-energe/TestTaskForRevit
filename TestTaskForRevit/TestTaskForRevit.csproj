@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\..\AppData\Roaming\Autodesk\Revit\Addins\2019\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,7 +65,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)TestTaskForRevit.addin" "$(AppData)\Autodesk\REVIT\Addins\2019"
+copy "$(ProjectDir)bin\Debug\TestTaskForRevit.dll" "$(AppData)\Autodesk\REVIT\Addins\2019"</PostBuildEvent>
   </PropertyGroup>
 </Project>
